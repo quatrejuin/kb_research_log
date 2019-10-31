@@ -1,7 +1,28 @@
 
-
+- 2019-10-30
+  - Test TransE with 200 dimension
 - 2019-10-29
-  - Test version 7 duplated from version 5, on epoch 666 of version 68, hd#338
+  - Test version 8 duplated from version 5, on epoch 666 of version 68, hd#342 (wv + good type constrain)
+    ```log
+      no type constraint results:
+      metric: MRR MR hit@10 hit@3 hit@1
+      l(raw): 0.029710 1263.511841 0.072413 0.018519 0.004788
+      r(raw): 0.079407 488.204010 0.193883 0.070019 0.022965
+      averaged(raw): 0.054559 875.857910 0.133148 0.044269 0.013877
+
+      l(filter): 0.049523 869.156921 0.117268 0.041679 0.012264
+      r(filter): 0.111769 455.589325 0.275530 0.109352 0.039578
+      averaged(filter): 0.080646 662.373108 0.196399 0.075515 0.025921
+      type constraint results:
+      metric: MRR MR hit@10 hit@3 hit@1
+      l(raw): 0.096259 900.354858 0.222760 0.095866 0.039627
+      r(raw): 0.210594 333.396118 0.364996 0.212597 0.140428
+      averaged(raw): 0.153427 616.875488 0.293878 0.154231 0.090027
+
+      l(filter): 0.194554 564.312012 0.341933 0.213036 0.120102
+      r(filter): 0.333004 300.893127 0.512020 0.369344 0.241865
+      averaged(filter): 0.263779 432.602570 0.426976 0.291190 0.180983
+    ```
   - hd#33,34 DISTMULT + good type constrain
     ```log
     no type constraint results:
