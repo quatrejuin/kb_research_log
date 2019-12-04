@@ -1,10 +1,31 @@
-
+- 2019-11-05
+  
+  - The prediction is almost a constant by each relation. Guess it's because there are to few training examples. Will try to reduce the complicity of model. (Reduce the dimension)
+    - <img src="https://i.imgur.com/GAfRQhN.png" style="zoom:80%;" />
+  
+- 2019-11-04
+  
+  - Export csv killed, guess it's because the pandas dataframe consumes too much memory. Try to write csv directly row by row. 
+  
+- 2019-11-03
+  
+  - Try to test on epoch 235 version 42 with the detail log print out.
+    - Will use 
+  ```python
+  def predict_head_entity(self, t, r, k)
+  ```
+  ```python
+  def predict_tail_entity(self, h, r, k)
+  ```
+  
 - 2019-11-01
   
 |              | MRR      | MR         | hit@10   |
 | ------------ | -------- | ---------- | -------- |
 | WV(l filter) | 0.071011 | 620.638794 | 0.151178 |
 | WV(r filter) | 0.140395 | 691.752686 | 0.311395 |
+
+- The above result doesn't seem so good. probably I should try this method with SGD.
 
   - Test version 10, hd#388 on epoch 84 of a training version 70(hd#386, hd#387) copy from version 69, but without entropy_tail. (Quick test)
   ```log
